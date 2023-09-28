@@ -1,0 +1,14 @@
+.galleryCart-cart-border {
+    border: azure solid 1px;
+}
+
+.galleryCart-cart-flex {
+    display: flex;
+    flex-direction: row;
+    column-gap: 2rem;
+}
+
+.galleryCart-cart-margin {
+    margin-bottom: 1rem;
+    margin-right: 1rem;
+}
