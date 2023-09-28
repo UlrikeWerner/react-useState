@@ -3,13 +3,16 @@ export default function SearchForm({search, setSearch}: any) {
     return (
         <>
             <form>
-                <label>
+                <label htmlFor="searchName">
                     search name: {" "}
-                    <input type="text"
-                           name="search"
-                           value={search}
-                           onChange={event => {setSearch(event.target.value)}}/>
                 </label>
+                <input
+                    id="searchName"
+                    type="text"
+                    name="search"
+                    value={search}
+                    onChange={event => {setSearch(event.target.value)}}/>
+
             </form>
         </>
     )

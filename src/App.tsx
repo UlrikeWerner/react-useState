@@ -1,11 +1,11 @@
 import './App.css'
-import RaMGallery from "./site/RaMGallery.tsx";
+import Gallery from "./site/Gallery.tsx";
 
 function App() {
 
   return (
     <>
-        <RaMGallery />
+        <Gallery />
     </>
   )
 }

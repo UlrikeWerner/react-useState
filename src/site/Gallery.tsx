@@ -2,7 +2,7 @@ import {useState} from "react";
 import {rickAndMortyDB} from "../assets/dataBase.ts";
 import GalleryCart from "./RaMGalleryComponents/GalleryCart/GalleryCart.tsx";
 import SearchForm from "./RaMGalleryComponents/SearchForm/SearchForm.tsx";
-export default function RaMGallery() {
+export default function Gallery() {
     const [search, setSearch] = useState<string>("");
     const [data, setData] = useState(rickAndMortyDB.results);
 
@@ -25,7 +25,8 @@ export default function RaMGallery() {
         <main>
             <h1>Rick and Morty Gallery</h1>
             <SearchForm search={search} setSearch={searchUpdate}/>
-            {data.map((character) =>
+            {data.length !== 0
+                ? data.map((character) =>
                 <GalleryCart
                     key={character.id}
                     name={character.name}
@@ -36,6 +37,7 @@ export default function RaMGallery() {
                     location={character.location.name}
                     image={character.image}
                 />)
+                : <p>Es konnten keine Charaktere gefunden werden!</p>
             }
         </main>
     )
