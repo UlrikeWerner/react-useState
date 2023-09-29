@@ -1,14 +1,22 @@
-.galleryCart-cart-border {
+.galleryCard-card-border {
     border: azure solid 1px;
 }
 
-.galleryCart-cart-flex {
+.galleryCard-card-flex {
     display: flex;
     flex-direction: row;
     column-gap: 2rem;
 }
 
-.galleryCart-cart-margin {
+.galleryCard-card-margin {
     margin-bottom: 1rem;
     margin-right: 1rem;
+}
+
+.galleryCard-h2-color {
+    color: mediumseagreen;
+}
+
+.galleryCard-image-border-right {
+    border-right: azure solid 1px;
 }

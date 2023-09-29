@@ -30,7 +30,9 @@ export default function Gallery() {
             {data.length !== 0
                 ? data.map((character) =>
                 <GalleryCart
+                    isDetail={false}
                     key={character.id}
+                    id={character.id}
                     name={character.name}
                     status={character.status}
                     species ={character.species}
