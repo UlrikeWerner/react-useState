@@ -1,8 +1,10 @@
 import {useState} from "react";
 import {rickAndMortyDB} from "../assets/dataBase.ts";
-import GalleryCart from "./RaMGalleryComponents/GalleryCart/GalleryCart.tsx";
-import SearchForm from "./RaMGalleryComponents/SearchForm/SearchForm.tsx";
+import GalleryCart from "./GalleryComponents/GalleryCart/GalleryCart.tsx";
+import SearchForm from "./GalleryComponents/SearchForm/SearchForm.tsx";
+import Navi from "../Navi/Navi.tsx";
 export default function Gallery() {
+    const headline: string = "Rick and Morty Gallery";
     const [search, setSearch] = useState<string>("");
     const [data, setData] = useState(rickAndMortyDB.results);
 
@@ -23,7 +25,7 @@ export default function Gallery() {
 
     return (
         <main>
-            <h1>Rick and Morty Gallery</h1>
+            <Navi title={headline}/>
             <SearchForm search={search} setSearch={searchUpdate}/>
             {data.length !== 0
                 ? data.map((character) =>
