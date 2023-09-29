@@ -1,8 +1,8 @@
 import {useState} from "react";
-import {rickAndMortyDB} from "../assets/dataBase.ts";
 import GalleryCart from "./GalleryComponents/GalleryCart/GalleryCart.tsx";
 import SearchForm from "./GalleryComponents/SearchForm/SearchForm.tsx";
 import Navi from "../Navi/Navi.tsx";
+import {rickAndMortyDB} from "../assets/dataBase";
 export default function Gallery() {
     const headline: string = "Rick and Morty Gallery";
     const [search, setSearch] = useState<string>("");
@@ -10,7 +10,7 @@ export default function Gallery() {
 
     function searchUpdate(value: string): void{
         setSearch(value);
-        setData(rickAndMortyDB.results.filter((element) => {
+        setData(data.filter((element) => {
             const searchTerm: string = value.toLowerCase();
            return (
                element.name.toLowerCase().includes(searchTerm) /*||

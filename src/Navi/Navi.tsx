@@ -8,7 +8,8 @@ export default function Navi({title}:{title: string}) {
             <h1 className="navi-header-margin-button">{title}</h1>
             <nav className="navi-nav-margin-button">
                 <Link className="navi-link-margin-right navi-link-buttonStyle" to={"/"}>Home</Link>
-                <Link className="navi-link-buttonStyle" to={"/characters"}>Gallery</Link>
+                <Link className="navi-link-margin-right navi-link-buttonStyle" to={"/characters"}>Gallery</Link>
+                <Link className="navi-link-buttonStyle" to={"/characters/add"}>add Character</Link>
             </nav>
         </>
     )
