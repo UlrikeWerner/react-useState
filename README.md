@@ -30,3 +30,12 @@ Schritt 4: Erstellt euch eine Header Komponente, mit einer Überschrift und eine
 Schritt 1: Passe die Character-Card so an, sodass bei einem "click" auf eine Seite weitergeleitet wird auf "/characters/{id}".
 
 Schritt 2: Erstelle eine weitere Route, die auf dem Pfad  "/characters/:id" die Komponente "CharacterDetailCard" navigiert. Die CharacterDetailCard soll als prop eine Liste mit allen Characteren übergeben bekommen, anhand der ID soll der richtige Character rausgesucht und angezeigt werden.
+
+# React-Form
+Schritt 1 : Nutzt euer Rick and Morty Projekt und erstellt eine neue branch evtl. "react-form".
+
+Schritt 2 : Erstelle  eine neue Komponente um einen neuen Character anzulegen.
+
+Schritt 3 : Erstelle eine Form und für die wichtugsten Attribute eines Characters, ein Inputfield und speichere die werte entsprechend in einem State ab.
+
+Schritt 4 : Fügt einen Button zu der Form hinzu, um die eingegeben Werte als neuen Character zu speichern. Nutze dafür die 'onSubmit' Funktion und stelle sicher, dass über eine Callbackfunktion der neue Character in die Liste mit allen Characteren, in der App.tsx, hinzugefügt wird.
