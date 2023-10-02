@@ -5,7 +5,14 @@ import Navi from "../Navi/Navi.tsx";
 import { DBdata } from "../assets/dataBase.ts";
 
 type PropsType = {
-    characters : DBdata[]
+    characters : DBdata[],
+    page: number,
+    setPage: (page: number) => void
+}
+
+enum PageOperator {
+    Back,
+    Forword
 }
 export default function Gallery(props: PropsType) {
     const headline: string = "Rick and Morty Gallery";
@@ -27,10 +34,33 @@ export default function Gallery(props: PropsType) {
         );
     }
 
+    function setNewPage(opterator: PageOperator){
+        if(opterator === PageOperator.Forword && props.page < 42){
+            props.setPage(props.page + 1);
+        }
+
+        if(opterator === PageOperator.Back && props.page > 1){
+            props.setPage(props.page -1);
+        }
+    }
+
     return (
         <main>
             <Navi title={headline}/>
             <SearchForm search={search} setSearch={searchUpdate}/>
+            <div>
+                <button onClick={() => setNewPage(PageOperator.Back)}>
+                    <span className="material-symbols-outlined">
+                        chevron_left
+                    </span>
+                </button>
+                <p>{props.page}</p>
+                <button onClick={() => setNewPage(PageOperator.Forword)}>
+                    <span className="material-symbols-outlined">
+                            chevron_right
+                    </span>
+                </button>
+            </div>
             {data.length !== 0
                 ? data.map((character) =>
                 <GalleryCart

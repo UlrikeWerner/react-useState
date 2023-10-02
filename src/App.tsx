@@ -8,14 +8,15 @@ import { DBdata } from './assets/dataBase.ts';
 import axios from 'axios';
 
 function App() {
+const [page, setPage] = useState<number>(1);
 const [data, setData] = useState<DBdata[]>([]);
 
 useEffect(() => {
     loadData();
-}, []);
+}, [page]);
 
 function loadData() {
-    axios.get("https://rickandmortyapi.com/api/character")
+    axios.get("https://rickandmortyapi.com/api/character?page=" + page)
         .then((response) => {
             setData(response.data.results);
         })
@@ -25,11 +26,15 @@ function loadData() {
         })
 };
 
+function getPage(pageNumber: number){
+    setPage(pageNumber);
+}
+
   return (
     <>
         <Routes>
             <Route path={"/"} element={<WelcomePage />}/>
-            <Route path={"/characters"} element={<Gallery characters={data}/>}/>
+            <Route path={"/characters"} element={<Gallery characters={data} page={page} setPage={getPage}/>}/>
             <Route path={"/characters/add"} element={<FormPage data={data} setNewCharacter={setData}/>}/>
             <Route path={"/*"} element={<Navigate to={"/"}/>}/>
         </Routes>
