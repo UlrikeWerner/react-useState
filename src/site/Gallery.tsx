@@ -2,11 +2,15 @@ import {useState} from "react";
 import GalleryCart from "./GalleryComponents/GalleryCart/GalleryCart.tsx";
 import SearchForm from "./GalleryComponents/SearchForm/SearchForm.tsx";
 import Navi from "../Navi/Navi.tsx";
-import {rickAndMortyDB} from "../assets/dataBase";
-export default function Gallery() {
+import { DBdata } from "../assets/dataBase.ts";
+
+type PropsType = {
+    characters : DBdata[]
+}
+export default function Gallery(props: PropsType) {
     const headline: string = "Rick and Morty Gallery";
     const [search, setSearch] = useState<string>("");
-    const [data, setData] = useState(rickAndMortyDB.results);
+    const [data, setData] = useState(props.characters);
 
     function searchUpdate(value: string): void{
         setSearch(value);
